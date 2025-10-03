@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Onion Rings Robotics Team</title>
+    <meta name="description"
+        content="Onion Rings Robotics — Team di robotica con vibrazioni cyber, neon glow e progetti che spaccano." />
+    <meta name="theme-color" content="#0a0b10" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="Onion_Rings.css" />
+    <meta name="color-scheme" content="dark only">
+</head>
+
+<body>
+    <!-- LED side strips -->
+    <div class="led-strip led-left" aria-hidden="true"></div>
+    <div class="led-strip led-right" aria-hidden="true"></div>
+
+    <!-- Background canvas -->
+    <canvas id="bg" aria-hidden="true"></canvas>
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <!-- Preloader -->
+    <div id="preloader" aria-hidden="true">
+        <div class="preloader-ring">
+            <span class="preloader-text">ONION RINGS</span>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a href="#hero" class="brand" aria-label="Onion Rings Home">
+                <img src="OnionRings_logo.jpg" alt="Logo Onion Rings" class="logo" />
+                <span>Onion Rings</span>
+                <span class="brand-dot" aria-hidden="true"></span>
+            </a>
+
+            <button class="nav-toggle" aria-label="Apri/chiudi menu" aria-expanded="false">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+
+            <nav class="nav">
+                <ul>
+                    <li><a href="#about">Chi siamo</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#progetti">Progetti</a></li>
+                    <li><a href="#contatti" class="btn btn-neon">Contattaci</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="app">
+        <section id="hero" class="section hero">
+            <div class="container hero-inner">
+                <h1 class="glitch" data-text="ONION RINGS">ONION RINGS</h1>
+                <p class="subtitle">Croccanti sul campo, pungenti nei circuiti. Team di robotica con cuore open e anima
+                    cyber.</p>
+                <div class="cta">
+                    <a href="#progetti" class="btn btn-neon">Scopri i Progetti</a>
+                    <a href="#contatti" class="btn btn-ghost">Unisciti al Team</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="chip glow">Meccanica</div>
+                    <div class="chip glow">Elettronica</div>
+                    <div class="chip glow">Vis. Artificiale</div>
+                    <div class="chip glow">AI & Autonomia</div>
+                </div>
+            </div>
+            <div class="scroll-indicator" aria-hidden="true">
+                <span>Scroll</span>
+                <div class="mouse"></div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container grid two">
+                <div class="content in-view">
+                    <h2 class="title neon">Chi siamo</h2>
+                    <p>
+                        Onion Rings è un team di robotica che progetta, costruisce e programma robot per competizioni e
+                        dimostrazioni tech.
+                        Lavoriamo come un circuito: idee, iterazioni, test e tanto divertimento.
+                    </p>
+                    <ul class="bullets">
+                        <li>Prototipazione rapida e design modulare</li>
+                        <li>Pipeline software: controllo, visione e navigazione</li>
+                        <li>Doc e risorse open per la community</li>
+                    </ul>
+                    <div class="badges">
+                        <span class="badge">STEM</span>
+                        <span class="badge">Open Source</span>
+                        <span class="badge">Community</span>
+                    </div>
+                </div>
+                <div class="card specs tilt">
+                    <h3>Stack Tecnologico</h3>
+                    <ul class="spec-list">
+                        <li><span>CAD & Mech</span><b>Fusion / Solid</b></li>
+                        <li><span>MCU</span><b>STM32 / ESP32</b></li>
+                        <li><span>Control</span><b>PID / State Estimation</b></li>
+                        <li><span>Vision</span><b>OpenCV</b></li>
+                        <li><span>AI</span><b>PyTorch / TFLite</b></li>
+                    </ul>
+                    <div class="ring-deco" aria-hidden="true"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="section alt">
+            <div class="container">
+                <h2 class="title neon">Il Team</h2>
+                <div class="grid four">
+                    <article class="member card tilt">
+                        <div class="avatar" data-initials="AB"></div>
+                        <h3>Alvise Bortoluzzi</h3>
+                        <p>Coder e Progettista</p>
+                    </article>
+                    <article class="member card tilt">
+                        <div class="avatar" data-initials="FF"></div>
+                        <h3>Federico Fongaro</h3>
+                        <p>Team Manager e coder</p>
+                    </article>
+                    <article class="member card tilt">
+                        <div class="avatar" data-initials="MV"></div>
+                        <h3>Martino Volpato</h3>
+                        <p>Coder e meccanico</p>
+                    </article>
+                    <article class="member card tilt">
+                        <div class="avatar" data-initials="CN"></div>
+                        <h3>Christian Nikolic</h3>
+                        <p>Elettronico e Coder</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="progetti" class="section">
+            <div class="container">
+                <h2 class="title neon">Progetti</h2>
+                <div class="grid three">
+                    <article class="project card tilt">
+                        <div class="icon neon-ico" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9 21h6M12 17v4M4 11a8 8 0 1116 0v5H4v-5z" />
+                            </svg>
+                        </div>
+                        <h3>OR-DRIVE</h3>
+                        <p>Base motrice omnidirezionale con controllo a spazio di stato e stima d’assetto.</p>
+                        <div class="labels"><span>Control</span><span>Mech</span></div>
+                    </article>
+                    <article class="project card tilt">
+                        <div class="icon neon-ico" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 5l4 4-7 7H5v-4l7-7z" />
+                            </svg>
+                        </div>
+                        <h3>Vision Onion</h3>
+                        <p>Pipeline di visione per tracking marker e object detection on-edge.</p>
+                        <div class="labels"><span>CV</span><span>AI</span></div>
+                    </article>
+                    <article class="project card tilt">
+                        <div class="icon neon-ico" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M4 7h16M4 12h16M4 17h16" />
+                            </svg>
+                        </div>
+                        <h3>Telemetria LIVE</h3>
+                        <p>Dashboard realtime: log e diagnostica in gara.</p>
+                        <div class="labels"><span>FW</span><span>Tools</span></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <p class="muted center">Vuoi supportarci? <a href="#contatti" class="link neon">Scrivici</a></p>
+        </div>
+        </section>
+
+        <section id="contatti" class="section alt">
+            <div class="container grid two">
+                <div>
+                    <h2 class="title neon">Contattaci</h2>
+                    <p>Domande, collaborazioni o sponsorship? Ti rispondiamo in breve.</p>
+                    <ul class="contact-list">
+                        <li><span>Mail</span><a href="fongaro.federico370@gmail.com">fongaro.federico370@gmail.com</a>
+                        </li>
+                        <li><span>GitHub</span><a href="#" aria-label="GitHub">github.com/onionrings</a></li>
+                    </ul>
+                </div>
+                <form id="contact-form" class="card">
+                    <label>Nome
+                        <input type="text" name="name" placeholder="Il tuo nome" required />
+                    </label>
+                    <label>Email
+                        <input type="email" name="email" placeholder="tu@esempio.com" required />
+                    </label>
+                    <label>Messaggio
+                        <textarea name="message" rows="5" placeholder="Scrivici qui..." required></textarea>
+                    </label>
+                    <button type="submit" class="btn btn-neon full">Invia</button>
+                    <p id="form-status" class="muted" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+
+        <div class="container">
+            <h1 class="title neon">Risultati Gare</h1>
+            <p class="subtitle">Archivio delle competizioni a cui abbiamo partecipato, con punteggi e piazzamenti.</p>
+
+            <div class="card tilt">
+                <h3>Competizioni recenti</h3>
+                <ul class="spec-list">
+                    <!-- Aggiungi/modifica i risultati qui sotto -->
+                    <li>
+                        <span>LE COMPETIZIONI NON SONO ANCORA INIZIATE!</span>
+                    </li>
+                    <!-- Fine lista -->
+                </ul>
+            </div>
+        </div>
+
+        <section>
+            </div>
+            <div class="muted center" style="margin-top: 2rem;">
+                <h3>LA NOSTRA CATEGORIA</h3>
+                <p>RESCUE LINE</p>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="brand-mini">
+                <span>Onion Rings</span>
+            </div>
+            <div class="foot-links">
+                <a href="#about">Chi siamo</a>
+                <a href="#progetti">Progetti</a>
+                <a href="#contatti">Contatti</a>
+            </div>
+            <div class="socials">
+                <a href="#" aria-label="GitHub" class="ico">
+                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                        <path
+                            d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.9 9.6.5.1.7-.2.7-.5v-2c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.5 1.1 3.1.8.1-.7.3-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 .9-2.7-.1-.2-.4-1.3.1-2.6 0 0 .8-.3 2.7 1 .8-.2 1.6-.3 2.4-.3s1.6.1 2.4.3c2-1.3 2.7-1 2.7-1 .5 1.3.2 2.4.1 2.6.6.7.9 1.6.9 2.7 0 3.9-2.4 4.7-4.6 5 .3.3.6.9.6 1.8v2.7c0 .3.2.6.7.5 4-1.3 6.9-5.1 6.9-9.6C22 6.6 17.5 2 12 2z" />
+                    </svg>
+                </a>
+                <a href="#" aria-label="Instagram" class="ico">
+                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                        <path
+                            d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3a5 5 0 110 10 5 5 0 010-10zm0 2.2a2.8 2.8 0 100 5.6 2.8 2.8 0 000-5.6zM18 6.5a1 1 0 110 2 1 1 0 010-2z" />
+                    </svg>
+                </a>
+                <a href="#" aria-label="YouTube" class="ico">
+                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                        <path
+                            d="M23 12s0-3.4-.4-4.9a3 3 0 00-2.1-2c-1.8-.5-9.5-.5-9.5-.5s-7.7 0-9.5.5a3 3 0 00-2.1 2C0 8.6 0 12 0 12s0 3.4.4 4.9a3 3 0 002.1 2c1.8.5 9.5.5 9.5.5s7.7 0 9.5-.5a3 3 0 002.1-2c.4-1.5.4-4.9.4-4.9zM9.6 15.5v-7l6.2 3.5-6.2 3.5z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <p class="copyright">© <span id="year"></span> Onion Rings Robotics — Made with Peter.AI⚡</p>
+    </footer>
+
+    <script src="Onion_Rings.js"></script>
+</body>
+
+</html>
